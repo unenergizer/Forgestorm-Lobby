@@ -1,0 +1,7 @@
+# The database for the server. This is responsible
+# for loading and storing stats.
+Database:
+  Address: localhost:3306
+  Schema: forgestorm_db
+  Username: root
+  Password: 

@@ -1,0 +1,7 @@
+name: FS-Lobby
+main: com.forgestorm.lobby.Lobby
+version: 0.1.0
+description: ForgeStorm Lobby
+author: unenergizer aka Robert Andrew Brown
+website: http://www.forgestorm.com/
+depend: [TitleManager, FS-SpigotCore]

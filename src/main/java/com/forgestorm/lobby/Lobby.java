@@ -1,6 +1,7 @@
 package com.forgestorm.lobby;
 
 import com.forgestorm.lobby.commands.Spawn;
+import com.forgestorm.lobby.commands.Tutorial;
 import com.forgestorm.lobby.display.TarkanScoreboard;
 import com.forgestorm.lobby.listeners.EntityDamage;
 import com.forgestorm.lobby.listeners.EntityDamageByEntity;
@@ -49,7 +50,7 @@ public class Lobby extends JavaPlugin {
         profileManager = spigotCore.getProfileManager();
         playerManager = new PlayerManager(this);
         tarkanScoreboard = new TarkanScoreboard(this);
-        teleports = new Teleports();
+        teleports = new Teleports(this);
         spawn = new Spawn(this);
 
         // Start Bukkit Tasks
@@ -66,6 +67,7 @@ public class Lobby extends JavaPlugin {
 
     private void registerCommands() {
         getCommand("spawn").setExecutor(spawn);
+        getCommand("tutorial").setExecutor(new Tutorial(this));
     }
 
     private void registerListeners() {

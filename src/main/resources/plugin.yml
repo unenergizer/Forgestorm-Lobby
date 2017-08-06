@@ -5,3 +5,6 @@ description: ForgeStorm Lobby
 author: unenergizer aka Robert Andrew Brown
 website: http://www.forgestorm.com/
 depend: [TitleManager, FS-SpigotCore]
+commands:
+   spawn:
+   tutorial:

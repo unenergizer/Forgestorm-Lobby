@@ -28,11 +28,6 @@ public class EntityDamage implements Listener {
             // Update the players health under their name.
             plugin.getSpigotCore().getScoreboardManager().updatePlayerHP(player);
 
-            if (event.getCause() == EntityDamageEvent.DamageCause.FALL) {
-                event.setCancelled(true);
-                return;
-            }
-
             if (event.getCause() == EntityDamageEvent.DamageCause.VOID) {
                 // Cancel annoying void damage.
                 event.setCancelled(true);
@@ -53,9 +48,6 @@ public class EntityDamage implements Listener {
                             } else {
                                 plugin.getTeleports().teleportTutorial(player);
                             }
-                        } else {
-                            // If the player was in a realm, make them leave the realm.
-                            plugin.getSpigotCore().getRealmManager().playerExitRealm(player);
                         }
 
                         cancel();

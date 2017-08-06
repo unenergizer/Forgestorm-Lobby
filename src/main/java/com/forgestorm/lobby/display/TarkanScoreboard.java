@@ -55,8 +55,8 @@ public class TarkanScoreboard implements Listener {
         titleManagerAPI.setScoreboardValue(player, 5, SpigotCoreMessages.SCOREBOARD_BLANK_LINE_2.toString());
 
         // SERVER
-        titleManagerAPI.setScoreboardValue(player, 6, SpigotCoreMessages.SCOREBOARD_SERVER.toString() +
-                plugin.getServer().getServerName());
+        titleManagerAPI.setScoreboardValue(player, 6, SpigotCoreMessages.SCOREBOARD_SERVER.toString());
+        titleManagerAPI.setScoreboardValue(player, 7, plugin.getServer().getServerName());
     }
 
     @EventHandler

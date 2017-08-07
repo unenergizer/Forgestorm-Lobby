@@ -11,6 +11,7 @@ import com.forgestorm.lobby.player.PlayerManager;
 import com.forgestorm.lobby.player.Teleports;
 import com.forgestorm.spigotcore.SpigotCore;
 import com.forgestorm.spigotcore.database.MongoDatabaseManager;
+import com.forgestorm.spigotcore.professions.ProfessionToggle;
 import io.puharesource.mc.titlemanager.api.v2.TitleManagerAPI;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -43,6 +44,7 @@ public class Lobby extends JavaPlugin {
     private TarkanScoreboard tarkanScoreboard;
     private Teleports teleports;
     private Spawn spawn;
+    private ProfessionToggle professionToggle;
 
     @Override
     public void onEnable() {
@@ -56,6 +58,9 @@ public class Lobby extends JavaPlugin {
         // Start Bukkit Tasks
         spawn.runTaskTimer(this, 0, 20);
 
+        // Enable professions
+        professionToggle = new ProfessionToggle(spigotCore);
+
         registerCommands();
         registerListeners();
     }
@@ -63,6 +68,7 @@ public class Lobby extends JavaPlugin {
     @Override
     public void onDisable() {
         playerManager.onDisable();
+        professionToggle.disableProfessions();
     }
 
     private void registerCommands() {
